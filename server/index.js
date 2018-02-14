@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const expressJwt = require("express-jwt");
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3040;
 
 app.use(morgan("dev"));
 app.use(bodyParser.json());

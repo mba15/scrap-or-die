@@ -1,9 +1,12 @@
 import React from "react";
+import Login from "./Login/index.js";
+import SignUp from "./SignUp/index.js"
 
 function App (){
     return(
         <div>
-            Hello World
+            <Login />
+            <SignUp />
         </div>
     )
 }
