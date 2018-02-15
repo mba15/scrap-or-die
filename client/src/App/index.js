@@ -1,14 +1,30 @@
-import React from "react";
-import Login from "./Login/index.js";
-import SignUp from "./SignUp/index.js"
+// App/index.js
 
-function App (){
-    return(
-        <div>
-            <Login />
-            <SignUp />
-        </div>
-    )
-}
+//dependencies
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+//views
+import Game from './views/Game';
+import Login from './views/Login';
+import Profile from './views/Profile';
+
+//components
+import Header from './components/Header';
+
+//styling
+import './index.css';
+
+const App = () => (
+    <div className='app-wrapper'>
+        <Header />
+        <Switch>
+            <Route exact path="/" component={Login}>Login</Route>
+            <Route path="/profile" component={Profile}>Profile</Route>
+            <Route path="/game" component={Game}>Game</Route>
+        </Switch>
+        {/* <Footer /> */}
+    </div>
+)
 
 export default App;

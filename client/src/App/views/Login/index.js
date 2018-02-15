@@ -1,19 +1,27 @@
+// App/views/Login/index.js
 
+//dependencies
 import React, { Component } from 'react';
-import {connect} from "react-redux";
-import {login} from "../../redux/auth/auth.js"
-import LoginForm from "./LoginForm";
+import { connect } from 'react-redux';
+import { login } from '../../../redux/auth/auth.js';
+
+//components
+import LoginForm from '/LoginForm';
+import SignUp from './SignUp';
+
+//styling
+import './Login.css';
 
 class Login extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             inputs: {
                 username: "",
                 password: ""
             }
         }
-        
+
     }
 
     handleChange(e) {
@@ -46,12 +54,15 @@ class Login extends Component {
 
     render() {
         return (
-            <LoginForm
-                handleChange={this.handleChange.bind(this)}
-                handleSubmit={this.handleSubmit.bind(this)}
-                {...this.state.inputs} />
+            <div>
+                <LoginForm
+                    handleChange={this.handleChange.bind(this)}
+                    handleSubmit={this.handleSubmit.bind(this)}
+                    {...this.state.inputs} />
+                <SignUp />
+            </div>
         )
     }
 }
 
-export default connect(state => state, {login})(Login);
+export default connect(state => state, { login })(Login);

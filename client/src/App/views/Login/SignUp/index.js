@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from "react-redux";
-import {signup} from "../../redux/auth/auth"
-import SignupForm from "./SignUpForm";
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { signup } from "../../../../redux/auth/auth";
+import SignUpForm from './SignUpForm';
 
 class SignUp extends Component {
     constructor() {
@@ -47,7 +47,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <SignupForm
+            <SignUpForm
                 handleChange={this.handleChange.bind(this)}
                 handleSubmit={this.handleSubmit.bind(this)}
                 {...this.state.inputs} />
@@ -55,7 +55,4 @@ class SignUp extends Component {
     }
 }
 
-export default connect(null, {signup}) (SignUp);
-
-
-
+export default connect(null, { signup })(SignUp);

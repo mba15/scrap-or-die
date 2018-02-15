@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    background-color: paleturquoise;
+    background: url('../../pictures/bitcoin-background.jpg');
+    background-position: center;
+    background-size: contain;
+}
+
+.app-wrapper>h1 {
+    text-align: center;
+}

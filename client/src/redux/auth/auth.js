@@ -4,7 +4,7 @@ export function signup(credentials) {
     return dispatch => {
         axios.post("/auth/signup", credentials)
             .then(response => {
-                const {token, user} = response.data;
+                const { token, user } = response.data;
                 localStorage.token = JSON.stringify(token);
                 localStorage.user = JSON.stringify(user);
                 dispatch(authenticate(user));
@@ -22,11 +22,11 @@ export function authenticate(user) {
     }
 }
 
-export function login(credentials) {  
+export function login(credentials) {
     return dispatch => {
         axios.post("/auth/login", credentials)
             .then(response => {
-                const {token, user} = response.data;
+                const { token, user } = response.data;
                 localStorage.token = JSON.stringify(token);
                 localStorage.user = JSON.stringify(user);
                 dispatch(authenticate(user));
@@ -37,7 +37,7 @@ export function login(credentials) {
     }
 }
 
-export function logout() {  
+export function logout() {
     delete localStorage.token;
     delete localStorage.user;
     return {
@@ -51,10 +51,10 @@ const intitialState = {
     isAuthenticated: false
 }
 
-export default function reducer(state = intitialState, action){
-    switch(action.type){
+export default function reducer(state = intitialState, action) {
+    switch (action.type) {
         case "AUTHENTICATE":
-            return{
+            return {
                 ...state,
                 ...action.user,
                 isAuthenticated: true
