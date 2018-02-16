@@ -1,12 +1,12 @@
-// App/views/Login/index.js
+// App/views/Landing/Login/index.js
 
 //dependencies
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { login } from '../../../redux/auth/auth.js';
+// import { connect } from 'react-redux';
+// import { login } from '../../../redux/auth/auth.js';
 
 //components
-import LoginForm from '/LoginForm';
+import LoginForm from './LoginForm';
 import SignUp from './SignUp';
 
 //styling
@@ -54,7 +54,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div className='login-wrapper'>
                 <LoginForm
                     handleChange={this.handleChange.bind(this)}
                     handleSubmit={this.handleSubmit.bind(this)}
@@ -65,4 +65,5 @@ class Login extends Component {
     }
 }
 
-export default connect(state => state, { login })(Login);
+export default Login;
+// connect(state => state, { login })(Login);

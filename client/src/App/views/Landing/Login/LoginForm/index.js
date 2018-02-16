@@ -1,5 +1,9 @@
+// App/views/Landing/Login/index.js
+
+//dependencies
 import React from 'react';
 
+//styling
 import './LoginForm.css';
 
 const LoginForm = props => (

@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 
 //views
 import Game from './views/Game';
-import Login from './views/Login';
+import Landing from './views/Landing';
 import Profile from './views/Profile';
 
 //components
@@ -19,7 +19,7 @@ const App = () => (
     <div className='app-wrapper'>
         <Header />
         <Switch>
-            <Route exact path="/" component={Login}>Login</Route>
+            <Route exact path="/" component={Landing}>Landing</Route>
             <Route path="/profile" component={Profile}>Profile</Route>
             <Route path="/game" component={Game}>Game</Route>
         </Switch>

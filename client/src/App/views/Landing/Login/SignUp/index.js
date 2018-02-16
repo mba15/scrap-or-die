@@ -1,6 +1,11 @@
+// App/views/Landing/Login/SignUp/index.js
+
+//dependencies
 import React, { Component } from 'react';
-import { connect } from "react-redux";
-import { signup } from "../../../../redux/auth/auth";
+// import { connect } from "react-redux";
+// import { signup } from "../../../../redux/auth/auth";
+
+//components
 import SignUpForm from './SignUpForm';
 
 class SignUp extends Component {
@@ -55,4 +60,6 @@ class SignUp extends Component {
     }
 }
 
-export default connect(null, { signup })(SignUp);
+export default SignUp;
+
+// connect(null, { signup })(SignUp);

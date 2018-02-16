@@ -13,9 +13,6 @@ body {
     font-family: 'Times New Roman', Times, serif;
     color: black;
     background-color: paleturquoise;
-    background: url('../../pictures/bitcoin-background.jpg');
-    background-position: center;
-    background-size: contain;
 }
 
 .app-wrapper>h1 {

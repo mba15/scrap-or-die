@@ -9,9 +9,9 @@ import './Navbar.css';
 
 const Navbar = () => (
     <div className='navbar-wrapper'>
-        <Link to='Login'>Login</Link>
-        <Link to='Profile'>Profile</Link>
-        <Link to='Game'>Game</Link>
+        <Link to='landing'>Landing</Link>
+        <Link to='profile'>Profile</Link>
+        <Link to='game'>Game</Link>
     </div>
 )
 
