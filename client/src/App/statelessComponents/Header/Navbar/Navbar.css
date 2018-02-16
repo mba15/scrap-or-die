@@ -1,0 +1,22 @@
+.navbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navbar-wrapper>a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: lightseagreen;
+    text-shadow: 1px 2px 2px grey;
+    padding: 0 .5rem;
+}
+
+.navbar-wrapper>a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+}
+
+.navbar-wrapper>a:focus {
+    color: darkblue;
+}
