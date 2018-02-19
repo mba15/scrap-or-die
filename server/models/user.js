@@ -12,10 +12,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    isAdmin: {
-        type: Boolean,
-        default: false
-    },
     stats: {
         win: Number,
         loss: Number

@@ -55,11 +55,7 @@ class Login extends Component {
     render() {
         return (
             <div className='login-wrapper'>
-                <LoginForm
-                    handleChange={this.handleChange.bind(this)}
-                    handleSubmit={this.handleSubmit.bind(this)}
-                    {...this.state.inputs} />
-              
+                <LoginForm />
             </div>
         )
     }

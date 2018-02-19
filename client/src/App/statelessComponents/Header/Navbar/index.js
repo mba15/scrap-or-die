@@ -11,6 +11,7 @@ const Navbar = () => (
     <div className='navbar-wrapper'>
         <Link to='/landing'>Landing</Link>
         <Link to='/profile'>Profile</Link>
+        <Link to='/login'> Login </Link> 
         <Link to='/game'>Game</Link>
     </div>
 )

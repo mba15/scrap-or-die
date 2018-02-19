@@ -2,6 +2,8 @@
 
 //dependencies
 import React, { Component } from 'react';
+import {connect}  from "react-redux";
+import {signup} from "../../../../redux/auth/auth";
 
 //styling
 import './SignUpForm.css';
@@ -15,6 +17,8 @@ class SignUpForm extends Component {
                 password: ""
             }
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -55,9 +59,9 @@ class SignUpForm extends Component {
                     <h3 className='regForm-subtitle'>Sign up today -- it's free.</h3>
                     <div className='regForm-inputs'>
                         <label htmlFor='firstName'>Username</label>
-                        <input onSubmit={this.handleSubmit} value={this.username} name="username" type='text' />
+                        <input onChange={this.handleChange} value={this.username} name="username" type='text' />
                         <label htmlFor='password'>Password (8 or more characters)</label>
-                        <input onSubmit={this.handleSubmit} value={this.password} name="password" type='password' />
+                        <input onChange={this.handleChange} value={this.password} name="password" type='password' />
                         <span className='agreement'>By clicking Join now, you agree to the BitClock User Agreement, Privacy Policy, and Cookie Policy.</span>
                         <input className='reg-button' type='submit' value='Join Now' />
                     </div>
@@ -67,4 +71,4 @@ class SignUpForm extends Component {
     }
 }
 
-export default SignUpForm;
+export default connect(state => state, {signup}) (SignUpForm);
