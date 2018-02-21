@@ -1,8 +1,10 @@
 import axios from "axios";
+const signupUrl = "/auth/signup";
+const loginUrl = "/auth/login";
 
 export function signup(credentials) {
     return dispatch => {
-        axios.post("/auth/signup", credentials)
+        axios.post(signupUrl, credentials)
             .then(response => {
                 const { token, user } = response.data;
                 localStorage.token = JSON.stringify(token);
@@ -24,7 +26,8 @@ export function authenticate(user) {
 
 export function login(credentials) {
     return dispatch => {
-        axios.post("/auth/login", credentials)
+        console.log(credentials);
+        axios.post(loginUrl, credentials)
             .then(response => {
                 const { token, user } = response.data;
                 localStorage.token = JSON.stringify(token);
@@ -47,7 +50,6 @@ export function logout() {
 
 const intitialState = {
     username: "",
-    isAdmin: false,
     isAuthenticated: false
 }
 
@@ -61,7 +63,6 @@ export default function reducer(state = intitialState, action) {
             };
         case "LOGOUT":
             return intitialState;
-
         default:
             return state;
     }
