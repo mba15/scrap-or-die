@@ -2,29 +2,23 @@
 
 //dependencies
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
 
-//views
-import Game from './views/Game';
-import Landing from './views/Landing';
-import Profile from './views/Profile';
-
-//components
-import Header from './components/Header';
+//screens
+import Header from './shared/Header';
+import ScreenRouter from './screens/ScreenRouter';
+import Menu from './shared/Menu/Menu';
 
 //styling
 import './index.css';
 
-const App = () => (
-    <div className='app-wrapper'>
-        <Header />
-        <Switch>
-            <Route exact path="/" component={Landing}>Landing</Route>
-            <Route path="/profile" component={Profile}>Profile</Route>
-            <Route path="/game" component={Game}>Game</Route>
-        </Switch>
-        {/* <Footer /> */}
-    </div>
-)
+const App = () => {
+    return (
+        <div>
+            <Header />
+            <ScreenRouter />
+            <Menu />
+        </div>
+    )
+}
 
 export default App;
