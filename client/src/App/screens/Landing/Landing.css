@@ -1,0 +1,10 @@
+.landing-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    right: 30%;
+    background-color: yellow;
+    opacity: .9;
+    padding: 48px 12px;
+}
