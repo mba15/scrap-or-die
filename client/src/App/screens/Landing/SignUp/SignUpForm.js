@@ -36,7 +36,6 @@ class SignUpForm extends Component {
     clearInputs() {
         this.setState({
             inputs: {
-                name: "",
                 username: "",
                 password: ""
             }
