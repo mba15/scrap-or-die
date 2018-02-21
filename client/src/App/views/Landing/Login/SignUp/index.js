@@ -9,15 +9,18 @@ import React, { Component } from 'react';
 import SignUpForm from './SignUpForm';
 
 class SignUp extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             inputs: {
-                name: "",
-                username: "",
+                firstName: "",
+                lastName: "",
+                email: "",
                 password: ""
             }
-        }
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -52,10 +55,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <SignUpForm
-                handleChange={this.handleChange.bind(this)}
-                handleSubmit={this.handleSubmit.bind(this)}
-                {...this.state.inputs} />
+            <SignUpForm handleChange={this.handleChange} handleSubmit={this.handleSubmit}></SignUpForm>
         )
     }
 }
