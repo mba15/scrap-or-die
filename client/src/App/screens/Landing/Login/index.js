@@ -1,13 +1,13 @@
-// App/screens/Landing/Login/index.js
+// App/views/Landing/Login/index.js
 
 //dependencies
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { login } from '../../../redux/auth/auth.js';
+import { connect } from 'react-redux';
+import { login } from '../../../../redux/auth/auth';
 
 //components
-import LoginForm from './LoginForm';
-import SignUp from './SignUp';
+import LoginForm from './LoginForm.js';
+
 
 //styling
 import './Login.css';
@@ -20,9 +20,8 @@ class Login extends Component {
                 username: "",
                 password: ""
             }
-        };
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        }
+
     }
 
     handleChange(e) {
@@ -55,16 +54,11 @@ class Login extends Component {
 
     render() {
         return (
-            <div className='login-container'>
-                <LoginForm
-                    handleChange={this.handleChange}
-                    handleSubmit={this.handleSubmit}
-                    {...this.state.inputs} />
-                <SignUp />
+            <div className='login-wrapper'>
+                <LoginForm />
             </div>
         )
     }
 }
 
-export default Login;
-// connect(state => state, { login })(Login);
+export default connect(state => state, { login })(Login);
