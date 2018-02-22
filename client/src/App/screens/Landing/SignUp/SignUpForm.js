@@ -47,7 +47,6 @@ class SignUpForm extends Component {
         // This is where we will call our signup function from redux
         this.props.signup(this.state.inputs);
         console.log(this.state.inputs);
-        alert(JSON.stringify(this.state.inputs));
         this.clearInputs();
     }
     render() {

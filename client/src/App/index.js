@@ -16,7 +16,6 @@ const App = () => {
         <div>
             <Header />
             <ScreenRouter />
-            {/* <Menu /> */}
         </div>
     )
 }
