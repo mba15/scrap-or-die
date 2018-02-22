@@ -13,18 +13,21 @@ import GameOver from "../../../screens/GameOver/GameOver.js";
 class MenuBoxes extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
+   
     this.state = {
       player: { //put character first to match layout in game
-        name: "Bob",
-        hp: 100,
-        weapon: "Sword",
+        name: props.stats.player.name,
+        hp: props.stats.player.hp,
+        weapon: props.stats.player.weapon,
       },
       enemy: { // removed enemy weapon property
-        name: "Susan",
-        hp: 100,
-        weapon: "Whip",
+        name: props.stats.enemy.name,
+        hp: props.stats.enemy.hp,
+        weapon: props.stats.enemy.weapon,
       },
-      message: "Ready to attack!", //changed 'message property key to 'console' to match game window
+      message: props.stats.message, //changed 'message property key to 'console' to match game window
+      attack: props.stats.attack
     };
     this.handleAttack = this.handleAttack.bind(this);
   }
@@ -38,7 +41,7 @@ class MenuBoxes extends Component {
       })
     }
     else {
-      let attackDamage = Math.floor(Math.random() * 15) + 1; //changed 'damage' to 'attackDamage' for clarification
+      let attackDamage = Math.floor(Math.random() * this.state.attack) + 1; //changed 'damage' to 'attackDamage' for clarification
       this.setState(prevState => {
         return {
           enemy: {
@@ -58,7 +61,7 @@ class MenuBoxes extends Component {
         })
         }
         else {
-        let playerDamage = Math.floor(Math.random() * 15) + 1; //changed 'damage' to 'attackDamage' for clarification
+        let playerDamage = Math.floor(Math.random() * this.state.attack) + 1; //changed 'damage' to 'attackDamage' for clarification
         this.setState(prevState => {
             return {
                 player: {
@@ -79,7 +82,7 @@ class MenuBoxes extends Component {
                 <GameOver />
             </div>
               :
-            <div>
+            <div className="menu-wrapper">
                 <div className='commandButtons-wrapper'>
                     <button onClick={this.handleClick} className='magic-button' id='magic'>run script</button>
                     <button className='attack-button' id='fight' onClick={this.handleAttack}>execute code</button>
