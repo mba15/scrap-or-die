@@ -3,6 +3,7 @@
 //dependencies
 import React, {Component} from 'react';
 import {connect}  from "react-redux";
+import {withRouter} from "react-router-dom";
 import {login} from "../../../../redux/auth/auth";
 
 //styling
@@ -45,7 +46,7 @@ class LoginForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         // This is where we will call our signin function from redux
-        this.props.login(this.state.inputs)
+        this.props.login(this.state.inputs, this.props.history);
         this.clearInputs();
     }
     render(){
@@ -72,4 +73,4 @@ class LoginForm extends Component {
     }
 }
 
-export default connect(state => state, {login})(LoginForm);
+export default withRouter(connect(state => state, {login})(LoginForm));

@@ -8,12 +8,12 @@ import Floor2 from './Floor2/Floor2';
 import Floor3 from './Floor3/Floor3';
 import Floor4 from './Floor4/Floor4';
 import Floor5 from './Floor5/Floor5';
-import GameOver from './GameOver/GameOver';
+import GameOver from './GameOver/GameOver.js';
 
 const ScreenRouter = () => (
     <div>
         <Switch>
-            <Route path='/Landing' component={Landing} />
+            <Route path='/landing' component={Landing} />
             <Route exact path='/' component={StartScreen} />
             <Route path='/Floor1' component={Floor1} />
             <Route path='/Floor2' component={Floor2} />

@@ -24,7 +24,7 @@ export function authenticate(user) {
     }
 }
 
-export function login(credentials) {
+export function login(credentials, history) {
     return dispatch => {
         console.log(credentials);
         axios.post(loginUrl, credentials)
@@ -33,6 +33,7 @@ export function login(credentials) {
                 localStorage.token = JSON.stringify(token);
                 localStorage.user = JSON.stringify(user);
                 dispatch(authenticate(user));
+                history.push("/");
             })
             .catch((err) => {
                 console.error(err);
